@@ -1,11 +1,10 @@
 elFinder file manager integration module for Drupal
 ===================================================
 
-
 System Requirements:
 
- - Drupal 6.x or 7.x
- - elFinder 1.1+
+ - Drupal 7.x
+ - elFinder 2.0+
 
 Optional:
  
@@ -16,7 +15,7 @@ Optional:
     - FCKeditor
     - TinyMCE 3
     - BUEdtor
-    - jWYSIWYG (Drupal 6.x, jWYSIWYG 0.93+, jquery 1.3+, jquery ui 1.7+)
+    - jWYSIWYG (jWYSIWYG 0.93+, jquery 1.3+, jquery ui 1.7+)
     - YUI Editor
     - WYMeditor
 
@@ -24,10 +23,17 @@ Optional:
 Installation:
 
   1. Unpack archive contents into modules/elfinder
-  2. Get latest elFinder at https://sourceforge.net/projects/elfinder/ and extract 'elfinder-x.y' contents to sites/all/libraries/elfinder
-  3. Enable elFinder module in Site Building > Modules (Modules menu in Drupal 7)
-  4. Add 'use file manager' permission to users who will be able to use elFinder at User Management > Permissions (Modules > elFinder > Permissions in Drupal 7)
-  5. Enable elFinder checkbox in your editor Wysywyg profile at Configuration > Wysiwyg profiles > <Editor Profile> Buttons and Plugins
+  2. Get latest elFinder at http://sourceforge.net/projects/drupal-elfinder/files/Library/ and it's contents to sites/all/libraries/elfinder
+  3. REMOVE following files from library directory if it exists to avoid security hole:
+
+     sites/all/libraries/elfinder/elfinder.html
+     sites/all/libraries/elfinder/elfinder.php.html
+     sites/all/libraries/elfinder/connectors/php/connector.php
+     sites/all/libraries/elfinder/php/connector.php
+
+  4. Enable elFinder module in Modules > List menu
+  5. Add 'use file manager' permission to users who will be able to use elFinder at Modules > elFinder > Permissions menu
+  6. Enable elFinder checkbox in your editor Wysiwyg profile at Configuration > Wysiwyg profiles > <Editor Profile> Buttons and Plugins
   
 Usage:
 
@@ -68,9 +74,7 @@ Usage:
 Known Issues:
 
  - Not all editors supported
- - Not all manager features supported
  - Conflicting with some devel module features
- - Conflicting with IMCE module
- - Incompatible with admin_menu_toolbar module
+
 
 

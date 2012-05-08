@@ -1,1 +1,1 @@
-var elfinder_tinymce_callback = function(url) { window.opener.tinymceFileWin.document.forms[0].elements[window.opener.tinymceFileField].value = url; window.opener.tinymceFileWin.focus(); window.close();}
+// $Id$var elfinder_tinymce_callback = function(url) {          window.tinymceFileWin.document.forms[0].elements[window.tinymceFileField].value = url;          window.tinymceFileWin.focus();          window.close();}

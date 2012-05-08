@@ -1,0 +1,12 @@
+name = Support Timer
+package = Support
+description = Track time spent on tickets
+dependencies[] = support
+core = 7.x
+
+; Information added by drupal.org packaging script on 2011-12-03
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "support_timer"
+datestamp = "1322873637"
+

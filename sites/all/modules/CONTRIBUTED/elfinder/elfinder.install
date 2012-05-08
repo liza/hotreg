@@ -15,12 +15,12 @@ function elfinder_requirements($phase) {
   $libpath = elfinder_lib_path();
 
   if ($phase == 'runtime' || $phase == 'install') {
-    $description = $t('elFinder library was not found. Please download it from <a href="@url">@url</a> and install to @libpath.', array('@url' => 'http://sourceforge.net/projects/elfinder/files/', '@libpath' => $libpath));
+    $description = $t('elFinder library was not found. Please download it from <a href="@url">@url</a> and install to @libpath.', array('@url' => elfinder_download_url(), '@libpath' => $libpath));
 
     $severity = '';
     $value = $t('Not found');
 
-    if ( !(is_readable($libpath . '/connectors/php/elFinder.class.php') && is_readable($libpath . '/js/elfinder.min.js')) ) {
+    if ( !(is_readable($libpath . '/php/elFinder.class.php') && is_readable($libpath . '/js/elfinder.min.js')) ) {
       $severity = REQUIREMENT_ERROR;
     }
     else {
@@ -51,4 +51,50 @@ function elfinder_requirements($phase) {
 function elfinder_uninstall() {
  db_query("DELETE FROM {variable} WHERE name LIKE 'elfinder_%%'");
  cache_clear_all('variables', 'cache');
+}
+
+function elfinder_schema() {
+  $schema = array();
+
+  $schema['elfinder_file_extinfo'] = array(
+    'description' => 'Stores additional filesystem attributes',
+    'fields' => array(
+      'extid'        => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+      'fid'        => array('type' => 'int', 'unsigned' => TRUE, 'not null' => FALSE),
+      'description'       => array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'default' => ''),
+    ),
+    'primary key' => array('extid'),
+  );
+  
+  $schema['elfinder_profile'] = array(
+    'description' => 'Stores configuration profiles',
+    'fields' => array(
+      'pid'        => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+      'name'        => array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'default' => ''),
+      'description'       => array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'default' => ''),
+      'settings'    => array('type' => 'text', 'not null' => FALSE),
+    ),
+    'primary key' => array('pid'),
+  );
+  
+  return $schema;
+     
+}
+
+function elfinder_update_7101() {
+ // drupal_install_schema('elfinder');
+}
+
+function elfinder_update_7102() {
+  $ret = array();
+
+  if (db_table_exists('elfinder_profile') == FALSE) {
+      drupal_install_schema('elfinder');
+  }
+  
+  if (!db_field_exists('elfinder_profile', 'settings')) {
+      db_add_field($ret, 'elfinder_profile', 'settings', array('type' => 'text', 'not null' => FALSE));
+  }
+  
+  return $ret;
 }

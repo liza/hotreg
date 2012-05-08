@@ -7,9 +7,9 @@ core = 7.x
 dependencies[] = bueditor
 dependencies[] = elfinder
 
-; Information added by drupal.org packaging script on 2012-01-22
-version = "7.x-0.7"
+; Information added by drupal.org packaging script on 2012-05-03
+version = "7.x-2.x-dev"
 core = "7.x"
 project = "elfinder"
-datestamp = "1327272650"
+datestamp = "1336004150"
 
