@@ -1,0 +1,4 @@
+filename = 07May2012-000
+description = "most basic stuff: features, ctools, views, panels along with configuration and @font-face"
+modules = block color comment configuration contextual ctools ctools_custom_content dashboard dblog demo field field_sql_storage field_ui file filter help image list menu module_filter node number options panels panels_mini path rdf search shortcut stylizer system taxonomy text toolbar user views_content views_ui views features page_manager standard
+version = 1.1

@@ -1,0 +1,25 @@
+# YAML Theme Pattern
+# QScience
+
+info:
+  title: Set theme
+  description: as title
+  author: QScience
+  category: System
+  version: 1.0
+  core: 7.x
+  author_website: http://qlectives.eu/
+
+actions:
+
+    - create:
+        tag: theme
+        value: garland
+        default: true
+
+    - create:
+        tag: theme
+        value: bartik
+        default: true
+        admin: true
+

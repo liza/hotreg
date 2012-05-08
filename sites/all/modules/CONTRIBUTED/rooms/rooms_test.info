@@ -1,0 +1,13 @@
+name = Rooms Tests
+description = Testing for Rooms - currently just a scratchboard
+core = 7.x
+version = 1.x-dev
+
+package = Rooms
+
+; Information added by drupal.org packaging script on 2012-02-05
+version = "7.x-1.0-alpha4"
+core = "7.x"
+project = "rooms"
+datestamp = "1328428852"
+

@@ -1,0 +1,32 @@
+Availability Calendar Booking Formlet
+-------------------------------------
+
+Availability Calendar 7.x-1.x-dev 2011-xx-xx
+----------------------------------------------
+- Also POST calendar name (as it is part of the field value).
+- Better handling of multiple formlets on 1 page, e.g. teaser listings.
+- Also set/remove class form-button-disabled when (un)setting disabled attribute.
+- Improved CSS.
+
+
+Availability Calendar 7.x-1.0 2011-09-19
+----------------------------------------
+- Only show the formlet if there is an enabled calendar.
+- Added basic styling to the formlet.
+- Added an option to make the "URL to proceed the booking" language dependent.
+- Moved instance settings (Post URL and booked state) to the field level.
+  This requires a deletion of all formlet fields followed by re-adding them to
+  your content types.
+- [#1268202]: Fatal error: Call to undefined function availability_calendar_get_states().
+
+
+Availability Calendar 7.x-1.x-alpha3 2011-09-01
+-----------------------------------------------
+- Added entity label as a hidden field to the formlet.
+- Update README.txt with more instructions regarding webform.
+
+
+Availability Calendar 7.x-1.x-alpha2 2011-08-24
+-----------------------------------------------
+- First version of this submodule that adds a booking formlet field.
+  See "README.txt" for details.
