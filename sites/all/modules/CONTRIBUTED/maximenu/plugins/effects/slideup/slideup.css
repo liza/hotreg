@@ -1,0 +1,12 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Effect - Slideup
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Link Slide Up */
+.link-slideup { display: block; height: 30px; line-height: 30px; margin: 0;  padding: 0 15px; overflow: hidden; }

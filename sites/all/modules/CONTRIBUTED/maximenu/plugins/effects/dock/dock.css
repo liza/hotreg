@@ -1,0 +1,35 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Effect - Dock
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Dock Effect */
+.maximenu.maximenu-dock { height: auto; }
+.maximenu.maximenu-dock ul.menu { height: auto; }
+.maximenu.maximenu-dock ul.menu li.leaf-icon { height: auto; }
+.maximenu.maximenu-dock ul.menu li.leaf-icon .link { height: auto; }
+.maximenu.maximenu-dock ul.menu li.leaf-icon .link img {}
+.maximenu.maximenu-dock.maximenu-vertical ul.menu li.leaf-icon .link { padding: 0; }
+.maximenu.maximenu-dock.maximenu-left ul.menu li.leaf-icon { text-align: left; }
+.maximenu.maximenu-dock.maximenu-right ul.menu li.leaf-icon { text-align: right; }
+.maximenu.maximenu-dock.maximenu-middle ul.menu { width: auto; }
+.maximenu.maximenu-dock.maximenu-middle ul.menu li.leaf-icon { text-align: center;  }
+
+.maximenu.maximenu-dock.maximenu-bottom,
+.maximenu.maximenu-dock.maximenu-bottom ul.menu,
+.maximenu.maximenu-dock.maximenu-bottom ul.menu li.leaf-icon,
+.maximenu.maximenu-dock.maximenu-bottom ul.menu li.leaf-icon .link,
+.maximenu.maximenu-dock.maximenu-bottom ul.menu li.leaf-icon .link img { vertical-align: bottom; float: none; display: inline; }
+.maximenu.maximenu-dock.maximenu-bottom ul.menu li.leaf-icon .maximenu-content { bottom: 50px; }
+
+.maximenu.maximenu-dock.maximenu-top ul.menu li.leaf-icon .maximenu-content { top: 50px; }
+.maximenu.maximenu-dock.maximenu-top.maximenu-column ul.menu li.leaf-icon .maximenu-content { top: -30px; }
+.maximenu.maximenu-dock.maximenu-top { height: 30px; }
+
+.maximenu.maximenu-dock.maximenu-column.maximenu-top { height: auto; }
+.maximenu.maximenu-dock.maximenu-column.maximenu-top.maximenu-column ul.menu { height: auto; }

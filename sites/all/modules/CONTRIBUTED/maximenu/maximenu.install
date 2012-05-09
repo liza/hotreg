@@ -1,0 +1,28 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Install script to install the Maximenu
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+
+/**
+ * Implementation of hook_install().
+ *
+function maximenu_install() {
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function maximenu_uninstall() {
+  variable_del('maximenu');
+  variable_del('maximenu_backup');  
+  variable_del('maximenu_settings');
+  variable_del('maximenu_active_tab');
+
+}
+

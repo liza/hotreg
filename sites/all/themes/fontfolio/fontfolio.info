@@ -1,0 +1,24 @@
+name = FontFolio
+description = FontFolio is a showcase theme for designers, artists and craft persons. This is a Drupal port of FontFolio WP theme by Marios Lublinski.
+core = 7.x
+
+stylesheets[all][] = styles/fontfolio.css
+stylesheets[all][] = styles/fontfolio-d.css
+
+regions[search]    = Search
+regions[header]    = Header
+regions[help]      = Help
+regions[content]   = Content
+regions[sidebar]   = Sidebar
+regions[footer]    = Footer
+
+; Default Theme Settings ----------------------------------------------------------
+
+settings[hide_page_tile] = 1
+
+; Information added by drupal.org packaging script on 2012-04-21
+version = "7.x-1.0"
+core = "7.x"
+project = "fontfolio"
+datestamp = "1335035479"
+

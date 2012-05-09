@@ -1,0 +1,43 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Simple Skin
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+
+/* Maximenu Content - simple style - general */
+.maximenu-simple .maximenu-top { height: 25px; background: url(images/simple1.png) 0 0 repeat-x; position: relative; }
+.maximenu-simple .maximenu-top-left { position: absolute; top: 0; left: -25px; height: 25px; width: 25px; background: url(images/simple1.png) 0 -50px no-repeat; }
+.maximenu-simple .maximenu-top-right { position: absolute; top: 0; right: -25px; height: 25px; width: 25px; background: url(images/simple1.png) -25px -50px no-repeat; }
+
+.maximenu-simple .maximenu-middle { background: none #fff; }
+.maximenu-simple .maximenu-middle-left { background: url(images/simple2.png) left top repeat-y; margin-left: -25px; }
+.maximenu-simple .maximenu-middle-right { padding: 5px 20px; background: url(images/simple3.png) right top repeat-y; margin-right: -25px; }
+
+.maximenu-simple .maximenu-bottom { height: 25px; background: url(images/simple1.png) 0 -25px repeat-x; position: relative; }
+.maximenu-simple .maximenu-bottom-left { position: absolute; bottom: 0; left: -25px; height: 25px; width: 25px; background: url(images/simple1.png) 0 -75px no-repeat; }
+.maximenu-simple .maximenu-bottom-right { position: absolute; bottom: 0; right: -25px; height: 25px; width: 25px; background: url(images/simple1.png) -25px -75px no-repeat; }
+
+
+/* Maximenu Content - simple style - main menu */
+.maximenu-simple.maximenu-main-menu .maximenu-content .maximenu-top { display: none; }
+ 
+/* Maximenu Content - simple style - block down/down */
+.maximenu-simple.maximenu-block.maximenu-row.maximenu-block-down .maximenu-content .maximenu-top { display: none; }
+.maximenu-simple.maximenu-block.maximenu-row.maximenu-block-up .maximenu-content .maximenu-bottom { display: none; }
+
+
+/* Maximenu Content - simple style - block left */
+
+/* Maximenu Content - simple style - block right */
+
+/* Maximenu Content - simple style - float top/bottom */
+.maximenu-simple.maximenu-float.maximenu-row.maximenu-top .maximenu-content .maximenu-top { display: none; }
+.maximenu-simple.maximenu-float.maximenu-row.maximenu-bottom .maximenu-content .maximenu-bottom { display: none; }
+
+
+
+

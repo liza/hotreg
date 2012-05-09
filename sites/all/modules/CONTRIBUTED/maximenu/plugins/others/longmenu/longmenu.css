@@ -1,0 +1,22 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Other - Long Menu
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Long Menu */
+.menu-ul-wrapper { position: relative; }
+.menu-scroller { z-index: 100; font-weight: bold; background-color: #ccc; cursor: pointer; text-align: center; }
+.menu-scroller:hover { color: #fff; }
+
+.maximenu-row .menu-scroller {  position: absolute; height: 30px; width: 30px; line-height: 30px; }
+.maximenu-row .menu-previous { top: 0; left: 0; }
+.maximenu-row .menu-next { top: 0; right: 0; }
+.maximenu-column .menu-scroller { height: 20px; line-height: 20px; }
+.maximenu-column .menu-previous {}
+.maximenu-column .menu-next {}
+

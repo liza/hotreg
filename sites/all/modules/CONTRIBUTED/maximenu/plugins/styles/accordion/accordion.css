@@ -1,0 +1,23 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Style - Accordion
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Accordion */
+.easy-accordion { display: block; position: relative; overflow: hidden; padding: 0; margin: 0; background-color: #f2f2f2; }
+.easy-accordion dt,.easy-accordion dd { margin: 0; padding: 0; position: absolute; }
+.easy-accordion dt { position: absolute !important; background-color: #f2f2f2; height: 46px; line-height: 44px; padding: 0 15px 0 0; text-align: right; margin-bottom: 0; margin-left: 0; z-index: 5;/* Safari */ -webkit-transform: rotate(-90deg); /* Firefox */ -moz-transform: rotate(-90deg);-moz-transform-origin: 20px 0px; /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); cursor: pointer; }
+.easy-accordion dt.active { cursor: pointer; color: #fff; background-color: #666; }
+.easy-accordion dt.hover { color:#fff; background-color: #999; }
+.easy-accordion dd { z-index: 1; opacity: 0; overflow: hidden; padding: 10px; background: #fff; }
+.easy-accordion dd.active { opacity: 1; z-index: 3; }
+.easy-accordion dd.no-more-active { z-index: 2; opacity: 1; }
+.easy-accordion dd.plus { z-index: 4 }
+.easy-accordion .slide-number { position: absolute; bottom: 0; left: 10px; font-weight: normal; font-size: 1.1em; /* Safari */ -webkit-transform: rotate(90deg); /* Firefox */ -moz-transform: rotate(90deg); /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
+.maximenu-style-accordion.maximenu-float { width: 480px; }
+.maximenu-style-accordion { height: 245px; }

@@ -1,0 +1,315 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Maximenu.
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+
+/**
+ * @include
+ *
+ *   Utilities - Reusable code library
+ *   Render    - Menu rendering engine
+ *   Help      - Separate help file
+ *
+ */ 
+@include_once dirname(__FILE__) . '/inc/maximenu.utils.inc';
+@include_once dirname(__FILE__) . '/inc/maximenu.render.inc';
+@include_once dirname(__FILE__) . '/inc/maximenu.help.inc'; 
+
+
+/**
+ * Implementation of hook_menu().
+ *
+ */
+function maximenu_menu() {
+  
+  $items = array();  
+  
+  $items['admin/structure/maximenu'] = array(
+    'title' => 'Maximenu',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', NULL),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'inc/maximenu.admin.inc',
+    'description' => 'Add power menus, import existing menus.',    
+  );
+  $items['admin/structure/maximenu/list'] = array(
+    'title' => 'List',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'list'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'file' => 'inc/maximenu.admin.inc',
+    'description' => 'Add power menus, import existing menus.',    
+    'weight' => 0,       
+  );
+  $items['admin/structure/maximenu/maxedit'] = array(
+    'title' => 'Maxedit',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'max'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'inc/maximenu.admin.inc',
+    'description' => 'Add power menus, import existing menus.', 
+    'weight' => 1,       
+  ); 
+  $items['admin/structure/maximenu/add'] = array(
+    'title' => 'Add',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'add'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.admin.inc',
+  );
+  $items['admin/structure/maximenu/%/clone'] = array(
+    'title' => 'Clone',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'clone'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.admin.inc',
+  );
+  $items['admin/structure/maximenu/%/edit'] = array(
+    'title' => 'Edit',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'edit'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.admin.inc',
+  ); 
+  $items['admin/structure/maximenu/%/delete'] = array(
+    'title' => 'Delete',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_admin', 'delete'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.admin.inc',
+  );           
+  $items['admin/structure/maximenu/%/links'] = array(
+    'title' => 'Edit Links',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_links'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.links.inc',
+  ); 
+  
+  $items['admin/structure/maximenu/blocks/%/%'] = array(
+    'title' => 'Blocks',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_blocks_get'),
+    'type' => MENU_CALLBACK,
+    'file' => 'inc/maximenu.blocks.inc',
+  );   
+  
+  if (module_exists('om_tools')) {
+    // This is directly using OM Tools form for advanced editing.
+    // It basically opens up $maximenu array variable for you to edit,
+    // it also creates 2 file backups, current and a copy,
+    // performs save current, backup, update backup, restore from backup, 
+    // download from current or copy backup
+    // Any module can implement this functionality just by copying this section
+    $items['admin/structure/maximenu/advanced-editing'] = array(
+      'title' => 'Advanced Editing',
+      'page callback' => 'drupal_get_form',
+      'access callback' => 'user_access', 
+      'access arguments' => array('administer maximenu'),
+      'page arguments' => array('om_tools_admin_advanced', 'maximenu', 'Maximenu'),
+      'type' => MENU_LOCAL_TASK,
+      'file path' => drupal_get_path('module', 'om_tools'),
+      'file' => 'inc/om_tools.admin.inc',
+      'weight' => 18,
+    );
+  } 
+  $items['admin/structure/maximenu/import'] = array(
+    'title' => 'Import',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_import'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'inc/maximenu.import.inc',
+    'weight' => 19,       
+  ); 
+  $items['admin/structure/maximenu/settings'] = array(
+    'title' => 'Settings',
+    'page callback' => 'drupal_get_form',
+    'access callback' => 'user_access', 
+    'access arguments' => array('administer maximenu'),
+    'page arguments' => array('maximenu_settings'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'inc/maximenu.settings.inc',
+    'description' => 'Enable/Disabled Options', 
+    'weight' => 20,       
+  );  
+  return $items;
+}
+
+/**
+ * Implementation of hook_perm().
+ *
+ */
+function maximenu_permission() {
+  return array(
+    'administer maximenu' => array(
+      'title' => t('Administer Maximenu'), 
+      'description' => t('Perform administration tasks for Maximenu.'),
+    ),
+  );
+}
+
+
+/**
+ * Implementation of hook_block().
+ *
+ * Shows all Maximenu blocks in /admin/structure/block
+ *
+ */
+function maximenu_block_info() {
+  global $_maximenu_variable;
+  $maximenu = $_maximenu_variable;
+    
+  $blocks = array();
+  if (!empty($maximenu)) {
+    foreach ($maximenu as $delta => $content) {
+      if ($content['output'] == 'block') {    
+        $blocks['maximenu-' . $delta] = array(
+          'info' => t('Maximenu: ' . $maximenu[$delta]['title']),
+          'cache' => DRUPAL_NO_CACHE, 
+          //'cache' => DRUPAL_CACHE_PER_ROLE,
+        );
+      }
+    }
+  }
+  return $blocks;
+}
+
+
+/**
+ * Implementation of hook_block_view().
+ *
+ * This will render all Maximenu blocks
+ *
+ */
+function maximenu_block_view($delta = '') {
+
+  // rendered maximenu variable
+  $content = _maximenu_block_load($delta);
+  if (!empty($content)) {
+     $block = array();
+     $block['subject'] = $content['title'];
+     $block['content'] = $content['content'];
+     return $block;
+  }
+}
+
+
+/**
+ * Implementation of hook_preprocess_page()
+ *
+ * For OM base theme, replaces $main_menu_tree variable
+ * For other themes, adds $main_menu_tree variable
+ *
+ */
+function maximenu_preprocess_page(&$vars) {
+  
+  // rendered maximenu variable
+  $maximenu = _maximenu_load();
+
+  if (!empty($maximenu)) {
+    foreach ($maximenu as $menu_key => $menu_content) {
+      // OM Base Theme
+      if ($menu_content['output'] == 'main_menu') $vars['main_menu_tree'] = $menu_content['content'];
+    }
+  }
+}
+
+
+/**
+ * Implementation of hook_process_html()
+ *
+ * Adds Maximenu floating menus in $page_bottom variable
+ *
+ */
+function maximenu_process_html(&$vars) {
+  
+  // rendered maximenu variable
+  $maximenu = _maximenu_load();
+
+  if (!empty($maximenu)) {
+    $modal_windows = '';
+    foreach ($maximenu as $menu_key => $menu_content) {  
+      // Maximenu Floating menu
+      if ($menu_content['output'] == 'float') $vars['page_bottom'] .= $menu_content['content'];
+
+      // Maximenu Modal Content
+      if (isset($menu_content['modal_windows'])) $modal_windows .= $menu_content['modal_windows'];
+    }
+    $vars['page_bottom'] .= !empty($modal_windows) ? '<div id="maximenu-mask"></div><div id="maximenu-modal-widows">' . $modal_windows . '</div>': '';
+  }
+}
+
+
+/**
+  * Implementation of hook_theme().
+  *
+  */
+function maximenu_theme() {
+  global $_maximenu_settings;
+  $settings = $_maximenu_settings;
+  
+  $theme_array = array(
+    '_maximenu_links' => array(
+       'render element' => 'form',
+       'file' => 'inc/maximenu.links.inc',
+    ),
+    'maximenu_blocks_attach' => array(
+       'render element' => 'form',
+       'file' => 'inc/maximenu.blocks.inc',
+    ),                      
+    'maximenu_wrapper' => array(
+      'template' => 'tpl/maximenu-wrapper',
+      'variables' => array('links' => array(), 'content' => NULL),
+    ),
+    'maximenu_content' => array(
+      'template' => 'tpl/maximenu-content',
+      'variables' => array('block' => array(), 'module' => NULL, 'delta' => NULL, 'classes' => NULL, 'title' => NULL, 'block_title' => NULL, ),
+    ),
+  );
+ 
+  /**
+   * Since the styles can be enabled/disabled and also extended by adding new styles,
+   * it will read maximenu settings variable for enabled styles and read files
+   * for availability of needed files and then merged with the current templates
+   */
+  $styles_options = isset($settings['styles']) ? $settings['styles']: array('block' => 'Block');
+  foreach ($styles_options as $style => $style_val) {
+    $style_file = MAXIMENU_PLUGINS . '/styles/' . $style . '/' . $style . '.inc';
+    if (file_exists($style_file)) {
+      include_once $style_file;
+      $theme =  '_maximenu_' . $style . '_theme';
+      $theme_array = array_merge($theme_array, $theme());
+      //dsm($var);
+    }
+  }  
+
+  return $theme_array;
+}
+
+

@@ -1,0 +1,11 @@
+; $Id$
+; Maximenu plugins defaults @author: Daniel Honrade http://drupal.org/user/351112
+
+styles[drop]   = 'Drop'
+skins[none]    = 'None'
+outputs[block] = 'Block'
+effects[]      = 
+others[]       = 
+
+
+

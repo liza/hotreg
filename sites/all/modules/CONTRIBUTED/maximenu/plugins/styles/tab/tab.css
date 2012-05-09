@@ -1,0 +1,17 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Style - Tab
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Tabbed */
+.maximenu-float .maximenu-tab-content { width: 480px; }
+.maximenu-tab-content { clear: both; }
+.maximenu-style-tab .maximenu-tab-content { height: 200px; overflow: hidden; }
+.maximenu-tab-content-inner {}
+.tab-content { float: left; }
+.tab-content-hide { display: none; }

@@ -1,0 +1,15 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Effect - Lavalamp
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Lavalamp */
+.maximenu ul.menu li.backLava { position: absolute; top: 5px; height: 20px; background: #f2f2f2; z-index: 10; z-index: 3; }
+.maximenu ul.menu li.backLava .leftLava {}
+.maximenu ul.menu li.backLava .bottomLava {}
+.maximenu ul.menu li.backLava .cornerLava {}

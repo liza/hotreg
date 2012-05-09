@@ -1,0 +1,26 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu No Style for easy overriding of custom style
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* OM Maximenu Content - no style */
+.maximenu-no-style .maximenu-content { left: -50px; top: 30px; padding: 0;  }
+.maximenu-no-style .maximenu-arrow { }
+
+.maximenu-no-style .maximenu-top {}
+.maximenu-no-style .maximenu-top-left {}
+.maximenu-no-style .maximenu-top-right {}
+
+.maximenu-no-style .maximenu-middle { background: none #fff; }
+.maximenu-no-style .maximenu-middle-left {}
+.maximenu-no-style .maximenu-middle-right { padding: 10px; }
+
+.maximenu-no-style .maximenu-bottom {}
+.maximenu-no-style .maximenu-bottom-left {}
+.maximenu-no-style .maximenu-bottom-right {}
+

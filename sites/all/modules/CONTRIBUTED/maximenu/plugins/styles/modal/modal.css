@@ -1,0 +1,15 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Style - Modal
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Modal */
+#maximenu-mask { position: absolute; left: 0; top: 0; z-index: 2990; background-color: #000; display: none; }
+#maximenu-modal-widows .maximenu-modal-content { position: fixed; z-index: 3000 !important; padding: 20px; height: auto; width: auto; }
+#maximenu-modal-widows .maximenu-modal-content .maximenu-close { color: #fff; cursor: pointer; text-align: right; }
+#maximenu-modal-widows .maximenu-modal-content .block { position: relative; }

@@ -1,0 +1,15 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Style - Drop
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Displace */
+.maximenu .maximenu-content.maximenu-displace { top: 0; margin-left: 0; /* IE7 */ left: 0; } /* should be set to no style */
+.maximenu .maximenu-content.maximenu-displace .maximenu-open { display: none; }
+.maximenu-row .link { position: relative; } 
+.maximenu-row .maximenu-content.maximenu-displace { float: left; }

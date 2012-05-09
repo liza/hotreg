@@ -1,0 +1,183 @@
+/**
+ * @file
+ * Contains Drupal specific FontFolio styles
+ */
+
+/*
+ * Drupal Global
+ */
+.block ol {
+  margin: 0 0 1.5em 2em; /*LTR*/
+}
+
+
+/*
+ * Header of tables (thanks:Fusion).
+ */
+thead th,
+th {
+  border-bottom: 3px solid #ccc;
+}
+
+tbody th {
+  border-bottom: 1px solid #ccc;
+}
+
+/*
+ * Alternating row background styles (thanks:Fusion).
+ */
+tr.even,
+tr.even td {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+
+tr.odd,
+tr.odd td {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+/*
+ * Header
+ */
+.menu_cont ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#header_top .menu_cont li.active a {
+  border-top: 9px solid #e4e4e2;
+  padding-top: 10px;
+}
+
+#header_top .menu_cont .language-link {
+  background-color: #f3f3f3;
+  border-top: 9px solid #272725;
+  padding-bottom: 2px;
+  padding-top: 10px;
+}
+
+#header_top .menu_cont a.language-link:hover {
+  background-color: #e4e4e2;
+  border-top: 9px solid #272725;
+}
+
+a.logo {
+  display: block;
+  overflow: hidden;
+  width: 93px;
+}
+
+#name-and-slogan {
+  float: left; /*LTR*/
+}
+
+#site-name {
+  font-size: 50px;
+  line-height: 40px;
+}
+
+h1#site-name {
+  margin: 0;
+}
+
+#site-slogan {
+  font-size: 20px;
+}
+
+#header_menu ul li {
+  margin: 0;
+}
+
+#header_menu a.active {
+  font-weight: bold;
+}
+
+/*
+ * Content
+ */
+.node.odd h3 {
+  background-color: #e4e4e2;
+}
+
+.node.even h3 {
+  background-color: #f3f3f3;
+}
+
+.big_post_box {
+  height: 506px;
+}
+
+.not-front.page-node h1.title {
+  background-color: #e4e4e2;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 0;
+  padding: 8px 10px;
+}
+
+#comment-form #edit-submit,
+#comment-form #edit-preview {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+#content a.feed-icon {
+  clear: both;
+  display: block;
+  padding-top: 1em;
+}
+
+/*
+ * Node types
+ */
+.blog_box img {
+  height: auto;
+}
+
+.page-blog .node-blog .field-type-image .field-item {
+  height: 209px;
+  overflow: hidden;
+}
+
+.node-page .field-type-image .field-item {
+  height: 209px;
+  overflow: hidden;
+}
+
+/*
+ * Sidebar
+ */
+.side_box div,
+.side_box p {
+  padding: 0;
+}
+
+.side_box div.content {
+  padding: 0 10px;
+}
+
+.side_box ul {
+  margin: 0;
+}
+
+.side_box ul li {
+  margin: 0 0 5px 0;
+}
+
+/*
+ * Pager
+ */
+ul.load_more_cont {
+  margin-top: 25px;
+}
+
+/*
+ * Footer
+ */
+#footer {
+  clear: both;
+}
+

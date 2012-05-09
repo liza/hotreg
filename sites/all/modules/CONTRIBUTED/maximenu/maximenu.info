@@ -1,0 +1,22 @@
+name = Maximenu
+package = Menus
+description = "Maximenu, add any block inside your menus"
+core = "7.x"
+files[] = maximenu.install
+files[] = maximenu.module
+files[] = inc/maximenu.admin.inc
+files[] = inc/maximenu.links.inc
+files[] = inc/maximenu.blocks.inc
+files[] = inc/maximenu.render.inc
+files[] = inc/maximenu.utils.inc
+files[] = inc/maximenu.help.inc
+scripts[] = js/maximenu.js
+stylesheets[all][] = css/maximenu.css
+configure = admin/structure/maximenu
+
+; Information added by drupal.org packaging script on 2012-04-19
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "maximenu"
+datestamp = "1334838255"
+

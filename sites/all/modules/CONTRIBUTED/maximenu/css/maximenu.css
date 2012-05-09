@@ -1,0 +1,159 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu css
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Admin */
+#maximenu-blocks-get table .col-block { width: 75%; } 
+#maximenu-links table .col-link { width: 75%; } 
+
+
+/* Admin */
+#maximenu-admin table .col-link { width: 75%; } 
+#maximenu-blocks-get .edit-block { display: inline; }
+#maximenu-blocks-get .edit-block a { font-weight: bold; }
+ 
+/* Default Maximenu style */
+.maximenu { height: auto; position: relative; z-index: 100; }
+.maximenu-content { display: none; }
+.maximenu .maximenu-content { position: absolute; top: 30px; left: 0; min-width: 300px; z-index: 500; }
+.maximenu .maximenu-content .block { position: relative; }
+.maximenu .maximenu-content.open { display: block !important; }
+.maximenu .maximenu-open { position: absolute; bottom: -10px; right: 0; font-size: 9px; height: 15px; line-height: 15px; }
+.maximenu .maximenu-open input { margin: 0 5px 0 0; float: left; }
+
+/* Edit Link */
+.maximenu .maximenu-edit { display: none; position: absolute; top: 0; right: 0; font-size: .7em; background-color: #fff; }
+.maximenu:hover .maximenu-edit { display: block; z-index: 1000; }
+.maximenu .maximenu-edit a { display: block; float: left; margin-left: 3px; height: 0; width: 16px; padding: 16px 0 0; overflow: hidden; background: url(images/icons.gif) 0 0 scroll no-repeat; }
+.maximenu .maximenu-edit a:hover { background-position: 0 -16px; }
+
+/* Blocks Edit */
+.maximenu-content .edit-block { display: none; position: absolute; top: 0; right: 0; font-size: .7em; background-color: #fff; }
+.maximenu-content .block:hover .edit-block { display: block; z-index: 1000; }
+.maximenu-content .block .edit-block a { display: block; float: left; margin-left: 3px; height: 0; width: 16px; padding: 16px 0 0; overflow: hidden; background: url(images/icons.gif) 0 0 scroll no-repeat; }
+.maximenu-content .block .edit-block a.block-config { background-position: 0 0; }
+.maximenu-content .block .edit-block a.block-config:hover { background-position: 0 -16px; }
+.maximenu-content .block .edit-block a.block-edit-menu { background-position: -16px 0; }
+.maximenu-content .block .edit-block a.block-edit-menu:hover { background-position: -16px -16px; }
+.maximenu-content .block .edit-block a.block-edit-view { background-position: -32px 0; }
+.maximenu-content .block .edit-block a.block-edit-view:hover { background-position: -32px -16px; }
+
+/* General */
+.maximenu ul.menu { display: block; padding: 0; margin: 0; height: 30px; position: relative; z-index: 20; }
+.maximenu ul.menu li.leaf { display: block; padding: 0; margin: 0; height: 30px; list-style: none; list-style-image: none; position: relative; z-index: 5; float: left; }
+.maximenu ul.menu li.leaf.leaf-icon .link { padding: 0; }
+.maximenu ul.menu li.leaf>.link { display: block; padding: 0 15px; margin: 0; height: 30px; line-height: 30px; float: left; }
+.maximenu ul.menu li.leaf .link:hover { cursor: pointer; text-decoration: none; }
+.maximenu ul.menu li.leaf:hover .maximenu-content-nofade { display: block; } 
+.maximenu ul.menu li.leaf .link .subtitle { line-height: normal; display: block; margin-top: -2px; font-size: .9em; }
+.clearfix { clear: both; }
+
+.maximenu .maximenu-top { position: relative; }
+.maximenu .maximenu-bottom { position: relative; }
+
+/* Main Menu */
+.maximenu.maximenu-main-menu .maximenu-content {}
+.maximenu.maximenu-main-menu ul.menu { float: left; }
+.maximenu.maximenu-main-menu ul.menu li.leaf { float: left; }
+.maximenu.maximenu-main-menu ul.menu li.leaf .link { float: left; }
+
+/* Stacking */
+.maximenu.maximenu-block.maximenu-row ul.menu li.leaf { float: left; }
+.maximenu.maximenu-block.maximenu-row ul.menu li.leaf .link { float: left;  }
+.maximenu.maximenu-block.maximenu-column { height: auto; }
+.maximenu.maximenu-block.maximenu-column ul.menu { float: none; height: auto; }
+.maximenu.maximenu-block.maximenu-column ul.menu li.leaf { float: none; height: auto; }
+.maximenu.maximenu-block.maximenu-column ul.menu li.leaf .link { float: none; height: auto; }
+
+.maximenu.maximenu-float.maximenu-row ul.menu li.leaf { float: left; }
+.maximenu.maximenu-float.maximenu-row ul.menu li.leaf .link { float: left;  }
+.maximenu.maximenu-float.maximenu-column { height: auto; }
+.maximenu.maximenu-float.maximenu-column ul.menu { float: none; height: auto; }
+.maximenu.maximenu-float.maximenu-column ul.menu li.leaf { float: none; height: auto; }
+.maximenu.maximenu-float.maximenu-column ul.menu li.leaf .link { float: none; height: auto; }
+
+/* Orientation */
+.maximenu.maximenu-horizontal {}
+.maximenu.maximenu-vertical { height: auto; width: 30px; }
+.maximenu.maximenu-vertical ul.menu { height: auto; width: 30px; }
+.maximenu.maximenu-vertical ul.menu li.leaf { height: auto; width: 30px; }
+.maximenu.maximenu-vertical ul.menu li.leaf .link { height: auto; width: 30px; padding: 30px 0; line-height: normal; }
+.maximenu.maximenu-vertical.maximenu-left ul.menu li.leaf .link { -webkit-transform: rotate(-270deg); -moz-transform: rotate(-270deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+.maximenu.maximenu-vertical.maximenu-left .maximenu-content { margin-left: 15px; }
+
+.maximenu.maximenu-vertical.maximenu-right ul.menu li.leaf .link { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
+.maximenu.maximenu-vertical.maximenu-right .maximenu-content { margin-right: 15px; }
+
+.maximenu.maximenu-float.maximenu-column.maximenu-vertical.maximenu-left .maximenu-content,
+.maximenu.maximenu-float.maximenu-column.maximenu-vertical.maximenu-right .maximenu-content { top: -20px; }
+
+/* Float */
+.maximenu.maximenu-float {}
+.maximenu.maximenu-float .maximenu-content { text-align: left; }
+
+.maximenu.maximenu-float.maximenu-left { right: auto; }
+.maximenu.maximenu-float.maximenu-left ul.menu { position: relative; left: 0; }
+.maximenu.maximenu-float.maximenu-left .maximenu-content { left: 10px; right: auto; }
+.maximenu.maximenu-float.maximenu-right { left: auto; }
+.maximenu.maximenu-float.maximenu-right ul.menu { position: relative; right: 0; }
+.maximenu.maximenu-float.maximenu-right .maximenu-content { right: 10px; left: auto; }
+
+.maximenu.maximenu-float.maximenu-middle { bottom: 0; left: 0; right: 0; margin: 0 auto; z-index: 190; text-align: center; }
+.maximenu.maximenu-float.maximenu-middle .maximenu-content {}
+.maximenu.maximenu-float.maximenu-middle ul.menu { width: auto; margin: 0 auto; text-align: center; }
+.maximenu.maximenu-float.maximenu-middle ul.menu li.leaf { display: inline-block; float: none; }
+.maximenu.maximenu-float.maximenu-middle ul.menu li.leaf .link { display: inline-block; float: none; }
+
+.maximenu.maximenu-float.maximenu-top { height: 30px; }
+.maximenu.maximenu-float.maximenu-top .maximenu-content { bottom: auto; top: 30px; }
+.maximenu.maximenu-float.maximenu-bottom {}
+.maximenu.maximenu-float.maximenu-bottom .maximenu-content { top: auto; bottom: 30px; }
+
+.maximenu.maximenu-float.maximenu-row {}
+.maximenu.maximenu-float.maximenu-column {}
+
+.maximenu.maximenu-float.maximenu-column.maximenu-left .maximenu-content { top: -50px; left: 100%; right: auto; }
+.maximenu.maximenu-float.maximenu-column.maximenu-right .maximenu-content { top: -50px; right: 100%; left: auto; }
+
+/* Block */
+.maximenu.maximenu-block {}
+.maximenu.maximenu-block .maximenu-content { z-index: 500; }
+.maximenu.maximenu-block ul.menu { float: left; }
+.maximenu.maximenu-block ul.menu li.leaf { float: left; }
+.maximenu.maximenu-block ul.menu li.leaf .link { float: left; }
+
+.maximenu.maximenu-block-down .maximenu-content {}
+.maximenu.maximenu-block.maximenu-block-up .maximenu-content { top: auto; bottom: 30px; }
+
+.maximenu.maximenu-block.maximenu-block-right .maximenu-content { top: -50px; left: 100%; right: auto; }
+.maximenu.maximenu-block.maximenu-block-left .maximenu-content { top: -50px; right: 100%; left: auto; }
+
+/* Maximenu Content - no style */
+.maximenu .maximenu-content { left: 0; top: 30px; padding: 0;  }
+
+*+html .maximenu .maximenu-content { width: 300px; } /* IE 7 */
+
+.maximenu .maximenu-arrow { }
+
+.maximenu .maximenu-top { width: 100%; }
+.maximenu .maximenu-top-left {}
+.maximenu .maximenu-top-right {}
+
+.maximenu .maximenu-middle { background: none #fff; width: 100%; }
+.maximenu .maximenu-middle-left {}
+.maximenu .maximenu-middle-right { padding: 10px; }
+
+*+html .maximenu .maximenu-middle-right { width: 300px; margin-left: 20px; padding-left: 0; } /* IE 7 */
+
+.maximenu .maximenu-bottom { width: 100%; }
+.maximenu .maximenu-bottom-left {}
+.maximenu .maximenu-bottom-right {}
+
+
+

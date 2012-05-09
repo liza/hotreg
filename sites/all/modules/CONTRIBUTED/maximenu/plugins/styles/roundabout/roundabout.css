@@ -1,0 +1,15 @@
+/* $Id$ */
+
+/**
+ * @file
+ * Maximenu Style - Roundabout
+ *
+ * @author: Daniel Honrade http://drupal.org/user/351112
+ *
+ */
+ 
+/* Round About */
+.maximenu-style-roundabout.maximenu-float { width: 480px; }
+.roundabout-holder { height: 200px; display: block; padding: 0; margin: 0; }
+.roundabout-holder .leaf { list-style: none; list-style-image: none; display: block; padding: 0; margin: 0; }
+.maximenu-roundabout-content { background-color: #fff; }
